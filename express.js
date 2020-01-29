@@ -17,7 +17,6 @@ function prepairNotification(json, res) {
     console.log(json);
 
     if (json.registrationToken !== undefined && json.registrationToken.length >= 152) {
-    //token looks ok.
         if ((json.body !== undefined) && (json.title !== undefined)) {
             firebase.sendNotification(json.title, json.body, json.registrationToken, callback => {
                 res.status(400).send({error: callback});

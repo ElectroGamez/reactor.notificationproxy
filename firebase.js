@@ -19,11 +19,9 @@ function sendNotification(title, body, registrationToken, callback) {
         token: registrationToken
     };
 
-    // Send a message to the device corresponding to the provided
-    // registration token.
+    // Send a message to the device corresponding to the provided registration token.
     admin.messaging().send(message)
         .then((response) => {
-            // Response is a message ID string.
             console.log('Successfully sent message:', response);
             callback("Data was send to FMS");
         })
